@@ -1,1 +1,4 @@
 # ExCoupleTeam
+
+The proposed model is for the audio module. All videos in the OMG Emotion dataset are converted to WAV files. In the presented process we make use of semi-supervised learning for the emotion recognition. A GAN is trained with unsupervised learning using another database (IEMOCAP), and part of the GAN autoencoder will be used for the audio representation.
+The audio spectrogram will be extracted in 1-second windows with 16kHz frequency and this will serve as input to the audio representation model. This audio representation will serve as input to a convolutional network and a Dense layer with 'tanh' activation that performs the prediction of Arousal and Valence values. To join the 1-second audio parts for each utterance, the median of the predicted values will be taken.
